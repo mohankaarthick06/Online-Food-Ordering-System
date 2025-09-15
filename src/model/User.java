@@ -23,6 +23,8 @@ public abstract class User {
     public boolean checkPassword(String attempt) {
         return password.equals(attempt);
     }
-
+    protected void setPassword(String newPassword) {
+        this.password = newPassword;
+    }
    
 }
