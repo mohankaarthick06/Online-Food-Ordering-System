@@ -3,6 +3,7 @@ public class MenuItem {
     private String name;
     private String description;
     private double price;
+    private boolean available;
     
 
     public MenuItem(int id, String name, String description, double price) {
@@ -10,22 +11,49 @@ public class MenuItem {
         this.name = name;
         this.description = description;
         this.price = price;
-        private boolean available;
+        this.available = true;
       
     }
 
-    public int getId() { return id; }
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
-    public String getDescription() { return description; }
-    public void setDescription(String description) { this.description = description; }
-    public double getPrice() { return price; }
-    public void setPrice(double price) { this.price = price; }
-    public boolean isAvailable() { return available; }
-    public void setAvailable(boolean available) { this.available = available; }
+    public int getId() 
+    { 
+       return id;
+    }
+    public String getName()
+     { 
+        return name;
+    }
+    public void setName(String name)
+     { 
+        this.name = name; 
+    }
+    public String getDescription()
+     { 
+        return description;
+     }
+    public void setDescription(String description) 
+    { 
+        this.description = description;
+     }
+    public double getPrice() 
+    {
+         return price; 
+        }
+    public void setPrice(double price) 
+    { 
+        this.price = price;
+     }
+    public boolean isAvailable() 
+    {
+         return available;
+         }
+    public void setAvailable(boolean available) 
+    { 
+        this.available = available;
+    }
     
     @Override
     public String toString() {
-        return name + " (₹" + price + ")" + (description.isEmpty() ? "" : ": " + description);
+        return name + " (₹" + price + ")" + (available ? "" : " [Not available]");
     }
 }
