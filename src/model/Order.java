@@ -20,13 +20,27 @@ public class Order {
         this.createdAt = LocalDateTime.now();
     }
 
-    public int getId() { return id; }
-    public Customer getCustomer() { return customer; }
-    public Restaurant getRestaurant() { return restaurant; }
-    public List<OrderItem> getItems() { return items; }
-    public double getTotalAmount() { return totalAmount; }
-    public OrderStatus getStatus() { return status; }
-    public void setStatus(OrderStatus status) { this.status = status; }
+    public int getId()
+     { return id; 
+          }
+    public Customer getCustomer()
+     { return customer;
+          }
+    public Restaurant getRestaurant() 
+    { return restaurant;
+          }
+    public List<OrderItem> getItems() 
+    { return items; 
+          }
+    public double getTotalAmount() 
+    { return totalAmount; 
+          }
+    public OrderStatus getStatus() 
+    { return status; 
+          }
+    public void setStatus(OrderStatus status)
+     { this.status = status; 
+        }
 
     public void addItem(MenuItem menuItem, int qty) {
         if (!menuItem.isAvailable()) throw new IllegalArgumentException("Item not available");
