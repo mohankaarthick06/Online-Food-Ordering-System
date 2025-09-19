@@ -29,3 +29,16 @@ public class FoodOrderingService {
         r.addMenuItem(m);
         return m;
     }
+     public Order placeOrder(Customer customer, Restaurant restaurant, Map<Integer, Integer> menuItemIdToQty) {
+        Order order = new Order(orderId++, customer, restaurant);
+
+        for (Map.Entry<Integer,Integer> e : menuItemIdToQty.entrySet()) {
+            MenuItem mi = restaurant.getMenuItem(e.getKey());
+            if (mi != null) {
+                order.addItem(mi, e.getValue());
+            }
+        }
+
+        orders.put(order.getId(), order);
+        return order;
+    }
