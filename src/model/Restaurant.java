@@ -13,34 +13,39 @@ public class Restaurant {
     }
 
     public int getId()
-    { 
-        return id; 
+       { 
+          return id; 
     }
     public String getName() 
-    { 
-        return name; 
+       { 
+          return name; 
     }
     public String getAddress()
-     { 
-        return address; 
+       { 
+          return address; 
     }
     public Collection<MenuItem> getMenuItems()
-     { 
-        return menu.values();
+      { 
+         return menu.values();
      
-     }
+      }
     public void addMenuItem(MenuItem item) 
-    { 
-        menu.put(item.getId(), item); 
-    }
+       { 
+          menu.put(item.getId(), item); 
+        }
     public MenuItem getMenuItem(int id) 
-    { 
-        return menu.get(id); 
+        { 
+          return menu.get(id); 
+        }
+    @Override
+    public String toString() {
+        return "Restaurant{" + "id=" + id + ", name='" + name + '\'' + '}';
     }
+}
 
 
     
 
  
-}
+
 
