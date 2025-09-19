@@ -19,17 +19,23 @@ public class FoodOrderingService {
         customers.put(c.getId(), c);
         return c;
     }
-     public Restaurant createRestaurant(String name, String address) {
+
+    /* Create new restaurant */
+    public Restaurant createRestaurant(String name, String address) {
         Restaurant r = new Restaurant(restaurantId++, name, address);
         restaurants.put(r.getId(), r);
         return r;
     }
-     public MenuItem addMenuItem(Restaurant r, String name, String desc, double price) {
+
+    /* Add item into restaurant menu */
+    public MenuItem addMenuItem(Restaurant r, String name, String desc, double price) {
         MenuItem m = new MenuItem(menuItemId++, name, desc, price);
         r.addMenuItem(m);
         return m;
     }
-     public Order placeOrder(Customer customer, Restaurant restaurant, Map<Integer, Integer> menuItemIdToQty) {
+
+    /* Place order for customer */
+    public Order placeOrder(Customer customer, Restaurant restaurant, Map<Integer, Integer> menuItemIdToQty) {
         Order order = new Order(orderId++, customer, restaurant);
 
         for (Map.Entry<Integer,Integer> e : menuItemIdToQty.entrySet()) {
@@ -42,3 +48,15 @@ public class FoodOrderingService {
         orders.put(order.getId(), order);
         return order;
     }
+
+    /* Update order status */
+    public void updateOrderStatus(Order order, Order.OrderStatus status) {
+        order.setStatus(status);
+    }
+
+    /* List all orders */
+    public Collection<Order> listAllOrders() {
+        return orders.values();
+    }
+}
+
