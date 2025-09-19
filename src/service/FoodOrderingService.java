@@ -19,3 +19,8 @@ public class FoodOrderingService {
         customers.put(c.getId(), c);
         return c;
     }
+     public Restaurant createRestaurant(String name, String address) {
+        Restaurant r = new Restaurant(restaurantId++, name, address);
+        restaurants.put(r.getId(), r);
+        return r;
+    }
