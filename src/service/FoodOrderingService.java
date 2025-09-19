@@ -24,3 +24,8 @@ public class FoodOrderingService {
         restaurants.put(r.getId(), r);
         return r;
     }
+     public MenuItem addMenuItem(Restaurant r, String name, String desc, double price) {
+        MenuItem m = new MenuItem(menuItemId++, name, desc, price);
+        r.addMenuItem(m);
+        return m;
+    }
