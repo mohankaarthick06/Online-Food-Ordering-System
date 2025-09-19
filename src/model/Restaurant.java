@@ -24,6 +24,20 @@ public class Restaurant {
      { 
         return address; 
     }
+    public Collection<MenuItem> getMenuItems()
+     { 
+        return menu.values();
+     
+     }
+    public void addMenuItem(MenuItem item) 
+    { 
+        menu.put(item.getId(), item); 
+    }
+    public MenuItem getMenuItem(int id) 
+    { 
+        return menu.get(id); 
+    }
+
 
     
 
