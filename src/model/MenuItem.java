@@ -1,3 +1,4 @@
+package model;
 public class MenuItem {
     private final int id;
     private String name;

@@ -1,4 +1,4 @@
-
+package model;
 // abstract base class for users
 public abstract class User {
     private final int id;
