@@ -25,5 +25,13 @@ public class Main {
 
         service.addMenuItem(r1, "Coke", "Cold drink", 49);
 
+        // Register customer
+        Customer c1 = service.registerCustomer("Mohan", "1", "1234", "Coimbatore");
+
+        Customer loggedIn = null;
+
+        Order placedOrder = null;
+
+
         
        
