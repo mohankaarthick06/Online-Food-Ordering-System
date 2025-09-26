@@ -32,6 +32,27 @@ public class Main {
 
         Order placedOrder = null;
 
+          while (true) 
+           {
+            System.out.println("\n==== Online Food Ordering ====");
+
+            System.out.println("1. Login as Customer");
+
+            System.out.println("2. Order Items");
+
+            System.out.println("3. Check Order Status");
+
+            System.out.println("4. Show Reports (Top Selling Items)");
+
+            System.out.println("5. Exit");
+
+            System.out.print("Choose: ");
+
+            int choice = sc.nextInt();
+
+            sc.nextLine();
+
+
 
         
        
