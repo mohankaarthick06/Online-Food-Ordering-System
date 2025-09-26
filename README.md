@@ -27,3 +27,4 @@ The Online Food Ordering System is designed to connect customers, restaurants, a
 5.Abstraction – Payment is defined as an abstract class; specific types (Cash, Online, Card) provide implementations.
 
 
+![image alt](https://github.com/mohankaarthick06/Online-Food-Ordering-System/blob/91abf765be98027ff705d604ade0184cd3d9e989/Screenshot%202025-09-26%20092002.png)

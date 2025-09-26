@@ -1,60 +1,82 @@
 package model;
-public class MenuItem {
+public class MenuItem
+{
     private final int id;
+
     private String name;
+
     private String description;
+
     private double price;
+
     private boolean available;
     
+    // menu item constructor
 
-    public MenuItem(int id, String name, String description, double price) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.price = price;
-        this.available = true;
+    public MenuItem(int id, String name, String description, double price)
+     {
+        this.id=id;
+
+        this.name=name;
+                                                     // variable initialization
+        this.description=description;
+
+        this.price=price;
+
+        this.available=true;
       
     }
+    // using get n set methods
 
     public int getId() 
-    { 
-       return id;
-    }
+        { 
+
+           return id;
+        }
     public String getName()
-     { 
-        return name;
+       { 
+
+          return name;
     }
     public void setName(String name)
-     { 
-        this.name = name; 
+       { 
+          this.name=name; 
     }
     public String getDescription()
-     { 
-        return description;
+       { 
+
+          return description;
      }
     public void setDescription(String description) 
-    { 
-        this.description = description;
+       { 
+          this.description=description;
      }
     public double getPrice() 
-    {
-         return price; 
+       {
+
+           return price; 
         }
     public void setPrice(double price) 
-    { 
-        this.price = price;
+       { 
+
+          this.price=price;
      }
     public boolean isAvailable() 
-    {
-         return available;
-         }
+       {
+
+           return available;
+     }
     public void setAvailable(boolean available) 
     { 
-        this.available = available;
+
+        this.available=available;
     }
     
     @Override
-    public String toString() {
+    public String toString() 
+    {
+
         return name + " (₹" + price + ")" + (available ? "" : " [Not available]");
+
     }
 }

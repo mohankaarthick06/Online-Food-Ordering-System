@@ -1,13 +1,15 @@
 package model;
 import java.util.*;
 
-public class Restaurant {
+public class Restaurant
+ {
     private final int id;
     private String name;
     private String address;
     private final Map<Integer, MenuItem> menu = new HashMap<>();
 
-    public Restaurant(int id, String name, String address) {
+    public Restaurant(int id, String name, String address) 
+    { // constructor
         this.id = id;
         this.name = name;
         this.address = address;
@@ -39,7 +41,8 @@ public class Restaurant {
           return menu.get(id); 
         }
     @Override
-    public String toString() {
+    public String toString()
+     {
         return "Restaurant{" + "id=" + id + ", name='" + name + '\'' + '}';
     }
 }
