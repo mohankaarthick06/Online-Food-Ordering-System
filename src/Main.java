@@ -52,6 +52,93 @@ public class Main {
 
             sc.nextLine();
 
+             switch (choice)
+               {
+                case 1: // login
+                    System.out.print("Enter email: ");
+
+                    String email = sc.nextLine();
+
+                    System.out.print("Enter password: ");
+
+                    String pass = sc.nextLine();
+
+                    if (c1.getEmail().equals(email) && c1.checkPassword(pass)) 
+                    {
+                        loggedIn = c1;
+                        System.out.println("Login successful. Welcome " + c1.getName() + "!");
+                    } 
+                    else
+                     {
+                        System.out.println("Invalid credentials.");
+                    }
+                    break;
+
+                case 2: 
+                    if(loggedIn == null) 
+                    {
+                        System.out.println("Please login first!");
+                        break;
+                    }
+                    System.out.println("Menu:");
+                    for(MenuItem mi:r1.getMenuItems()) 
+                    {
+                        System.out.println(mi.getId() + ". " + mi);
+                    }
+                    Map<Integer,Integer> orderMap = new HashMap<>();
+                    while(true)
+                    {
+                        System.out.print("Enter menu id to add (0 to finish): ");
+                        int mid=sc.nextInt();
+
+                        if (mid==0) break;
+
+                        System.out.print("Quantity: ");
+
+                        int qty=sc.nextInt();
+
+                        orderMap.put(mid, qty);
+                    }
+                    placedOrder=service.placeOrder(loggedIn, r1, orderMap);
+
+                    System.out.println("Order placed: " + placedOrder);
+                    break;
+
+                case 3: 
+                    if (placedOrder==null)
+                     {
+                        System.out.println("No order placed yet.");
+                    }
+                     else
+                      {
+                        System.out.println("Your order status: " + placedOrder.getStatus());
+                        System.out.println("Full details: " + placedOrder);
+                    }
+                    break;
+
+                case 4: 
+                    Map<String,Integer> report = reportService.topSellingItems(service.listAllOrders(), 5);
+
+                    System.out.println("Top Selling Items:");
+
+                    for (Map.Entry<String,Integer> e:report.entrySet()) 
+                       {
+                        System.out.println(e.getKey() + " -> " + e.getValue() + " sold");
+                    }
+                    break;
+
+                case 5: 
+                        System.out.println("Exiting... Goodbye!");
+                        sc.close();
+                        return;
+
+                default:
+                         System.out.println("Invalid choice."); // default which gives invalid choice
+            }
+        }
+    }
+}
+
 
 
         
